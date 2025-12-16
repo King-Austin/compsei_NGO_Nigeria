@@ -65,7 +65,7 @@ const resourceCategories = [
       {
         title: "Annual Report 2024",
         type: "Annual Report",
-        description: "Overview of CPSEI's activities, achievements, and financial information.",
+        description: "Overview of COMPSEI's activities, achievements, and financial information.",
         available: false,
         comingSoon: true
       },

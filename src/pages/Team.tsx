@@ -1,7 +1,8 @@
 import { Layout } from "@/components/Layout";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { User, Mail, Linkedin } from "lucide-react";
+import { Mail, Linkedin } from "lucide-react";
+import teamPlaceholder from "@/assets/team-placeholder.png";
 
 const teamCategories = [
   {
@@ -10,7 +11,7 @@ const teamCategories = [
       {
         name: "Founder / Executive Director",
         role: "Executive Director",
-        bio: "Leading CPSEI's vision and strategic direction in community psychosocial support.",
+        bio: "Leading COMPSEI's vision and strategic direction in community psychosocial support.",
         placeholder: true
       }
     ]
@@ -21,7 +22,7 @@ const teamCategories = [
       {
         name: "Program Coordinator",
         role: "Program Coordinator",
-        bio: "Overseeing the implementation and monitoring of all CPSEI programs.",
+        bio: "Overseeing the implementation and monitoring of all COMPSEI programs.",
         placeholder: true
       },
       {
@@ -44,7 +45,7 @@ const teamCategories = [
       {
         name: "Advisory Board Member",
         role: "Advisor",
-        bio: "Providing strategic guidance and expertise to strengthen CPSEI's work.",
+        bio: "Providing strategic guidance and expertise to strengthen COMPSEI's work.",
         placeholder: true
       },
       {
@@ -66,7 +67,7 @@ export default function Team() {
           <div className="max-w-3xl">
             <h1 className="heading-display mb-6">Our Team</h1>
             <p className="text-xl text-primary-foreground/90 leading-relaxed">
-              Meet the dedicated individuals driving CPSEI's mission to empower 
+              Meet the dedicated individuals driving COMPSEI's mission to empower 
               communities and strengthen psychosocial wellbeing across Nigeria.
             </p>
           </div>
@@ -93,18 +94,12 @@ export default function Team() {
               }`}>
                 {category.members.map((member, memberIndex) => (
                   <div key={memberIndex} className="card-ngo overflow-hidden">
-                    <div className="aspect-square bg-muted flex items-center justify-center">
-                      {member.placeholder ? (
-                        <div className="text-center p-4">
-                          <User className="h-20 w-20 text-primary/20 mx-auto mb-2" />
-                          <p className="text-muted-foreground text-sm italic">
-                            Photo<br />
-                            (To Be Updated)
-                          </p>
-                        </div>
-                      ) : (
-                        <User className="h-20 w-20 text-primary/20" />
-                      )}
+                    <div className="aspect-square bg-muted flex items-center justify-center overflow-hidden">
+                      <img 
+                        src={teamPlaceholder} 
+                        alt={`${member.name} - ${member.role}`}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <div className="p-6">
                       <h3 className="font-semibold text-lg mb-1">
@@ -152,7 +147,7 @@ export default function Team() {
             <p className="text-lead mb-8">
               We're always looking for passionate individuals who share our commitment 
               to community wellbeing and psychosocial support. Whether as staff or 
-              volunteers, there's a place for you at CPSEI.
+              volunteers, there's a place for you at COMPSEI.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button variant="default" size="lg" asChild>

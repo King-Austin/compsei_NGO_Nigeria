@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
-import logo from "@/assets/cpsei-logo.png";
+import logo from "@/assets/compsei-logo.png";
 
 const quickLinks = [
   { label: "About Us", href: "/about" },
@@ -28,9 +28,9 @@ export function Footer() {
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-6">
               <div className="bg-primary-foreground rounded-full p-1">
-                <img src={logo} alt="CPSEI Logo" className="h-12 w-12 object-contain" />
+                <img src={logo} alt="COMPSEI Logo" className="h-12 w-12 object-contain" />
               </div>
-              <span className="text-xl font-bold">CPSEI</span>
+              <span className="text-xl font-bold">COMPSEI</span>
             </Link>
             <p className="text-primary-foreground/80 text-sm leading-relaxed mb-6">
               Community Psychosocial Support Empowerment Initiative is a Nigerian NGO dedicated to 
@@ -141,7 +141,7 @@ export function Footer() {
       <div className="border-t border-primary-foreground/10">
         <div className="container-ngo py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-primary-foreground/70">
-            © {new Date().getFullYear()} CPSEI. All rights reserved.
+            © {new Date().getFullYear()} COMPSEI. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-primary-foreground/70">
             <Link to="/privacy" className="hover:text-primary-foreground transition-colors">

@@ -90,9 +90,9 @@ export default function Home() {
                 Empowering Communities. Restoring Dignity. Strengthening Psychosocial Wellbeing.
               </h1>
               <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 leading-relaxed max-w-xl">
-                Community Psychosocial Support Empowerment Initiative (CPSEI) is a Nigerian 
-                non-governmental organization addressing psychosocial, environmental, and 
-                community-level challenges through inclusive, community-driven solutions.
+              Community Psychosocial Support Empowerment Initiative (COMPSEI) is a Nigerian 
+              non-governmental organization addressing psychosocial, environmental, and 
+              community-level challenges through inclusive, community-driven solutions.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button variant="hero" size="lg" asChild>
@@ -116,7 +116,7 @@ export default function Home() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img 
                   src={treePlanting} 
-                  alt="CPSEI community engagement - tree planting activity" 
+                  alt="COMPSEI community engagement - tree planting activity"
                   className="w-full h-[400px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent"></div>
@@ -241,7 +241,7 @@ export default function Home() {
             <div className="rounded-2xl overflow-hidden shadow-lg">
               <img 
                 src={communityEngagement} 
-                alt="CPSEI team during community engagement activity" 
+                alt="COMPSEI team during community engagement activity"
                 className="w-full h-[400px] object-cover"
               />
             </div>
@@ -309,7 +309,7 @@ export default function Home() {
               <div className="w-16 h-16 rounded-full bg-secondary/20 flex items-center justify-center mx-auto mb-6">
                 <HandHeart className="h-8 w-8 text-secondary" />
               </div>
-              <h3 className="heading-card mb-3">Partner With CPSEI</h3>
+              <h3 className="heading-card mb-3">Partner With COMPSEI</h3>
               <p className="text-muted-foreground text-sm mb-6">
                 Collaborate with us to expand impact through joint programs and resource sharing.
               </p>
@@ -389,7 +389,7 @@ export default function Home() {
             Ready to Make a Difference?
           </h2>
           <p className="text-secondary-foreground/80 text-lg mb-8 max-w-2xl mx-auto">
-            Join CPSEI in building resilient, mentally healthy communities across Nigeria.
+            Join COMPSEI in building resilient, mentally healthy communities across Nigeria.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button variant="default" size="lg" asChild>

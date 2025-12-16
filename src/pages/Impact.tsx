@@ -33,7 +33,7 @@ const projects = [
     title: "Volunteer Engagement Sessions",
     location: "Various Locations",
     date: "Ongoing",
-    description: "Regular sessions to orient, train, and engage volunteers in CPSEI's community-based programs.",
+    description: "Regular sessions to orient, train, and engage volunteers in COMPSEI's community-based programs.",
     image: null,
     hasImage: false
   },
