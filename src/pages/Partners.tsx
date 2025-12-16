@@ -60,7 +60,7 @@ export default function Partners() {
             </span>
             <h2 className="heading-section mb-6">Partnership for Impact</h2>
             <p className="text-lead">
-              CPSEI believes that sustainable change requires collaboration. We actively 
+              COMPSEI believes that sustainable change requires collaboration. We actively 
               seek partnerships that align with our mission and values, bringing together 
               diverse expertise, resources, and networks to serve communities better.
             </p>

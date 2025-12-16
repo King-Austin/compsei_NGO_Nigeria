@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/cpsei-logo.png";
+import logo from "@/assets/compsei-logo.png";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -29,11 +29,11 @@ export function Header() {
           <Link to="/" className="flex items-center gap-3 group">
             <img 
               src={logo} 
-              alt="CPSEI Logo" 
+              alt="COMPSEI Logo" 
               className="h-14 w-14 object-contain transition-transform duration-300 group-hover:scale-105"
             />
             <div className="hidden sm:block">
-              <span className="text-lg font-bold text-primary leading-tight block">CPSEI</span>
+              <span className="text-lg font-bold text-primary leading-tight block">COMPSEI</span>
               <span className="text-xs text-muted-foreground leading-tight">Empowering Communities</span>
             </div>
           </Link>

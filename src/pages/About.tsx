@@ -33,7 +33,7 @@ export default function About() {
       <section className="bg-gradient-hero text-primary-foreground py-20">
         <div className="container-ngo">
           <div className="max-w-3xl">
-            <h1 className="heading-display mb-6">About CPSEI</h1>
+            <h1 className="heading-display mb-6">About COMPSEI</h1>
             <p className="text-xl text-primary-foreground/90 leading-relaxed">
               Community Psychosocial Support Empowerment Initiative is a non-governmental 
               organization committed to addressing interlinked psychosocial, environmental, 
@@ -53,7 +53,7 @@ export default function About() {
             <h2 className="heading-section mb-6">Our Story</h2>
             <div className="prose prose-lg max-w-none text-muted-foreground space-y-4">
               <p>
-                Community Psychosocial Support Empowerment Initiative (CPSEI) is a non-governmental 
+                Community Psychosocial Support Empowerment Initiative (COMPSEI) is a non-governmental 
                 organization committed to addressing interlinked psychosocial, environmental, 
                 and community-level challenges. Our work empowers individuals and communities 
                 to thrive emotionally, socially, and economically through mental health support, 
@@ -61,7 +61,7 @@ export default function About() {
               </p>
               <p>
                 Founded with the belief that sustainable development must address the whole 
-                person—mind, body, and community—CPSEI operates at the intersection of mental 
+                person—mind, body, and community—COMPSEI operates at the intersection of mental 
                 health, climate resilience, and community empowerment. We recognize that 
                 psychosocial wellbeing is fundamental to individual dignity and community 
                 development.

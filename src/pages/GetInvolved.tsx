@@ -28,7 +28,7 @@ const involvementOptions = [
   {
     id: "partner",
     icon: Handshake,
-    title: "Partner With CPSEI",
+    title: "Partner With COMPSEI",
     description: "Collaborate with us to expand impact through joint programs and resource sharing.",
     benefits: [
       "Access to community networks and local expertise",
