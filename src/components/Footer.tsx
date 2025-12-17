@@ -139,9 +139,22 @@ export function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-primary-foreground/10">
-        <div className="container-ngo py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-primary-foreground/70">
+        <div className="container-ngo py-6 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
+          <p className="text-sm text-primary-foreground/70 text-center md:text-left">
             © {new Date().getFullYear()} COMPSEI. All rights reserved.
+          </p>
+          <p className="text-sm text-primary-foreground/70 text-center">
+            Built and powered by{" "}
+            <a
+              href="https://nworahsoft.tech"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Nworahsoft Inc website"
+              className="underline-offset-4 hover:underline hover:text-primary-foreground transition-colors"
+            >
+              Nworahsoft Inc
+            </a>
+            {" "}— nworahsoft.tech
           </p>
           <div className="flex gap-6 text-sm text-primary-foreground/70">
             <Link to="/privacy" className="hover:text-primary-foreground transition-colors">
