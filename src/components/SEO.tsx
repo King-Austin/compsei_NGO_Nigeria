@@ -12,7 +12,7 @@ export const SEO = ({
   title,
   description,
   canonicalUrl,
-  ogImage = "https://via.placeholder.com/1200x630",
+  ogImage = "https://compsei.com.ng/compsei-logo.png",
   ogType = "website",
 }: SEOProps) => {
   const siteName = "COMPSEI";
