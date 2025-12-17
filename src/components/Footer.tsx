@@ -151,10 +151,10 @@ export function Footer() {
               rel="noopener noreferrer"
               aria-label="Visit Nworahsoft Inc website"
               className="underline-offset-4 hover:underline hover:text-primary-foreground transition-colors"
+              title="Nworahsoft Inc"
             >
               Nworahsoft Inc
             </a>
-            {" "}— nworahsoft.tech
           </p>
           <div className="flex gap-6 text-sm text-primary-foreground/70">
             <Link to="/privacy" className="hover:text-primary-foreground transition-colors">
