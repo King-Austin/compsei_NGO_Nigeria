@@ -18,32 +18,41 @@ import {
 } from "lucide-react";
 import communityEngagement from "@/assets/community-engagement.png";
 import treePlanting from "@/assets/tree-planting.jpg";
+import counsellingSession from "@/assets/counselling-session.png";
+import youthEmpowerment from "@/assets/youth-empowerment.png";
+import climateResilience from "@/assets/climate-resilience.png";
+import volunteerGroup from "@/assets/volunteer-group.png";
 
 const challenges = [
   {
     icon: Heart,
     title: "Mental Health & Psychosocial Distress",
-    description: "Addressing stress, trauma, stigma, and limited access to mental health resources."
+    description: "Addressing stress, trauma, stigma, and limited access to mental health resources.",
+    image: counsellingSession
   },
   {
     icon: Users,
     title: "Community Resilience Gaps",
-    description: "Strengthening weak community systems for coping with crises and mutual support."
+    description: "Strengthening weak community systems for coping with crises and mutual support.",
+    image: communityEngagement
   },
   {
     icon: Cloud,
     title: "Climate Change & Wellbeing",
-    description: "Supporting communities affected by climate impacts on livelihoods and mental health."
+    description: "Supporting communities affected by climate impacts on livelihoods and mental health.",
+    image: climateResilience
   },
   {
     icon: TreePine,
     title: "Environmental Degradation",
-    description: "Combating deforestation, land degradation, and promoting sustainable practices."
+    description: "Combating deforestation, land degradation, and promoting sustainable practices.",
+    image: treePlanting
   },
   {
     icon: Droplets,
     title: "Flooding & Disaster Impacts",
-    description: "Providing psychosocial support during disaster response and recovery."
+    description: "Providing psychosocial support during disaster response and recovery.",
+    image: null
   }
 ];
 
@@ -51,22 +60,26 @@ const programs = [
   {
     icon: Heart,
     title: "Psychosocial Support Services",
-    description: "Community-based counselling, peer support groups, and trauma-informed interventions."
+    description: "Community-based counselling, peer support groups, and trauma-informed interventions.",
+    image: counsellingSession
   },
   {
     icon: Users,
     title: "Community Empowerment Programs",
-    description: "Skills development, leadership training, and inclusive decision-making processes."
+    description: "Skills development, leadership training, and inclusive decision-making processes.",
+    image: youthEmpowerment
   },
   {
     icon: TreePine,
     title: "Climate Resilience & Adaptation",
-    description: "Community sensitization, local adaptation initiatives, and integrated care approaches."
+    description: "Community sensitization, local adaptation initiatives, and integrated care approaches.",
+    image: climateResilience
   },
   {
     icon: Lightbulb,
     title: "Advocacy & Awareness",
-    description: "Mental health education, awareness campaigns, and training of community leaders."
+    description: "Mental health education, awareness campaigns, and training of community leaders.",
+    image: communityEngagement
   }
 ];
 
@@ -148,19 +161,32 @@ export default function Home() {
               <Link 
                 key={index} 
                 to="/challenges"
-                className="card-ngo p-6 group cursor-pointer"
+                className="card-ngo overflow-hidden group cursor-pointer"
               >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <challenge.icon className="h-6 w-6 text-primary" />
+                <div className="aspect-video relative overflow-hidden">
+                  {challenge.image ? (
+                    <img 
+                      src={challenge.image} 
+                      alt={challenge.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-hero flex items-center justify-center">
+                      <challenge.icon className="h-12 w-12 text-primary-foreground/50" />
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
                 </div>
-                <h3 className="heading-card mb-2 group-hover:text-primary transition-colors">
-                  {challenge.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {challenge.description}
-                </p>
-                <div className="mt-4 flex items-center text-sm text-primary font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                  Learn More <ChevronRight className="h-4 w-4 ml-1" />
+                <div className="p-6">
+                  <h3 className="heading-card mb-2 group-hover:text-primary transition-colors">
+                    {challenge.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {challenge.description}
+                  </p>
+                  <div className="mt-4 flex items-center text-sm text-primary font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                    Learn More <ChevronRight className="h-4 w-4 ml-1" />
+                  </div>
                 </div>
               </Link>
             ))}
@@ -185,22 +211,31 @@ export default function Home() {
             {programs.map((program, index) => (
               <div 
                 key={index} 
-                className="flex gap-6 p-6 rounded-xl border border-border hover:border-primary/30 hover:shadow-card transition-all duration-300"
+                className="card-ngo overflow-hidden group"
               >
-                <div className="flex-shrink-0 w-14 h-14 rounded-full bg-gradient-hero flex items-center justify-center">
-                  <program.icon className="h-7 w-7 text-primary-foreground" />
-                </div>
-                <div>
-                  <h3 className="heading-card mb-2">{program.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-3">
-                    {program.description}
-                  </p>
-                  <Link 
-                    to="/programs" 
-                    className="inline-flex items-center text-sm text-primary font-medium hover:underline"
-                  >
-                    Learn More <ArrowRight className="h-4 w-4 ml-1" />
-                  </Link>
+                <div className="grid sm:grid-cols-2 h-full">
+                  <div className="aspect-square sm:aspect-auto relative overflow-hidden">
+                    <img 
+                      src={program.image} 
+                      alt={program.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="p-6 flex flex-col justify-center">
+                    <div className="w-10 h-10 rounded-full bg-gradient-hero flex items-center justify-center mb-4">
+                      <program.icon className="h-5 w-5 text-primary-foreground" />
+                    </div>
+                    <h3 className="heading-card mb-2">{program.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                      {program.description}
+                    </p>
+                    <Link 
+                      to="/programs" 
+                      className="inline-flex items-center text-sm text-primary font-medium hover:underline"
+                    >
+                      Learn More <ArrowRight className="h-4 w-4 ml-1" />
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}
@@ -238,12 +273,39 @@ export default function Home() {
       <section className="section-padding">
         <div className="container-ngo">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="rounded-2xl overflow-hidden shadow-lg">
-              <img 
-                src={communityEngagement} 
-                alt="COMPSEI team during community engagement activity"
-                className="w-full h-[400px] object-cover"
-              />
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-4">
+                <div className="rounded-2xl overflow-hidden shadow-lg">
+                  <img 
+                    src={communityEngagement} 
+                    alt="COMPSEI team during community engagement activity"
+                    className="w-full h-[200px] object-cover"
+                  />
+                </div>
+                <div className="rounded-2xl overflow-hidden shadow-lg">
+                  <img 
+                    src={counsellingSession} 
+                    alt="Psychosocial support session"
+                    className="w-full h-[150px] object-cover"
+                  />
+                </div>
+              </div>
+              <div className="space-y-4 pt-8">
+                <div className="rounded-2xl overflow-hidden shadow-lg">
+                  <img 
+                    src={youthEmpowerment} 
+                    alt="Youth empowerment workshop"
+                    className="w-full h-[150px] object-cover"
+                  />
+                </div>
+                <div className="rounded-2xl overflow-hidden shadow-lg">
+                  <img 
+                    src={volunteerGroup} 
+                    alt="COMPSEI volunteers"
+                    className="w-full h-[200px] object-cover"
+                  />
+                </div>
+              </div>
             </div>
             <div>
               <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
@@ -293,41 +355,59 @@ export default function Home() {
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="card-ngo p-8 text-center">
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                <UserCheck className="h-8 w-8 text-primary" />
+            <div className="card-ngo overflow-hidden group">
+              <div className="aspect-video relative overflow-hidden">
+                <img 
+                  src={volunteerGroup} 
+                  alt="Volunteer with COMPSEI"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
               </div>
-              <h3 className="heading-card mb-3">Volunteer With Us</h3>
-              <p className="text-muted-foreground text-sm mb-6">
-                Share your skills and time to support communities in need of psychosocial services.
-              </p>
-              <Button variant="outline" asChild>
-                <Link to="/get-involved#volunteer">Learn More</Link>
-              </Button>
+              <div className="p-6 text-center">
+                <h3 className="heading-card mb-3">Volunteer With Us</h3>
+                <p className="text-muted-foreground text-sm mb-6">
+                  Share your skills and time to support communities in need of psychosocial services.
+                </p>
+                <Button variant="outline" asChild>
+                  <Link to="/get-involved#volunteer">Learn More</Link>
+                </Button>
+              </div>
             </div>
-            <div className="card-ngo p-8 text-center">
-              <div className="w-16 h-16 rounded-full bg-secondary/20 flex items-center justify-center mx-auto mb-6">
-                <HandHeart className="h-8 w-8 text-secondary" />
+            <div className="card-ngo overflow-hidden group">
+              <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-secondary to-secondary/80">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <HandHeart className="h-16 w-16 text-secondary-foreground/50" />
+                </div>
               </div>
-              <h3 className="heading-card mb-3">Partner With COMPSEI</h3>
-              <p className="text-muted-foreground text-sm mb-6">
-                Collaborate with us to expand impact through joint programs and resource sharing.
-              </p>
-              <Button variant="gold" asChild>
-                <Link to="/get-involved#partner">Partner Now</Link>
-              </Button>
+              <div className="p-6 text-center">
+                <h3 className="heading-card mb-3">Partner With COMPSEI</h3>
+                <p className="text-muted-foreground text-sm mb-6">
+                  Collaborate with us to expand impact through joint programs and resource sharing.
+                </p>
+                <Button variant="gold" asChild>
+                  <Link to="/get-involved#partner">Partner Now</Link>
+                </Button>
+              </div>
             </div>
-            <div className="card-ngo p-8 text-center">
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                <Heart className="h-8 w-8 text-primary" />
+            <div className="card-ngo overflow-hidden group">
+              <div className="aspect-video relative overflow-hidden">
+                <img 
+                  src={communityEngagement} 
+                  alt="Support our work"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
               </div>
-              <h3 className="heading-card mb-3">Support Our Work</h3>
-              <p className="text-muted-foreground text-sm mb-6">
-                Your donation helps us reach more communities and provide critical services.
-              </p>
-              <Button variant="default" asChild>
-                <Link to="/get-involved#donate">Donate</Link>
-              </Button>
+              <div className="p-6 text-center">
+                <h3 className="heading-card mb-3">Support Our Work</h3>
+                <p className="text-muted-foreground text-sm mb-6">
+                  Your donation helps us reach more communities and provide critical services.
+                </p>
+                <Button variant="default" asChild>
+                  <Link to="/get-involved#donate">Donate</Link>
+                </Button>
+              </div>
             </div>
           </div>
         </div>

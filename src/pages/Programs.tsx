@@ -2,6 +2,11 @@ import { Layout } from "@/components/Layout";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Heart, Users, TreePine, Megaphone, BookOpen, Shield, Home, Lightbulb } from "lucide-react";
+import counsellingSession from "@/assets/counselling-session.png";
+import youthEmpowerment from "@/assets/youth-empowerment.png";
+import climateResilience from "@/assets/climate-resilience.png";
+import awarenessCapaign from "@/assets/awareness-campaign.png";
+import communityDialogue from "@/assets/community-dialogue.png";
 
 const programs = [
   {
@@ -9,6 +14,7 @@ const programs = [
     icon: Heart,
     title: "Psychosocial Support at the Grassroots",
     description: "Providing accessible mental health and psychosocial support within communities.",
+    image: counsellingSession,
     activities: [
       "Community-based counselling services",
       "Peer support groups for various demographics",
@@ -22,6 +28,7 @@ const programs = [
     icon: BookOpen,
     title: "Education & Community Engagement",
     description: "Raising awareness and building knowledge on mental health and wellbeing.",
+    image: awarenessCapaign,
     activities: [
       "Mental health education in schools and public spaces",
       "Community awareness campaigns",
@@ -35,6 +42,7 @@ const programs = [
     icon: Users,
     title: "Empowerment of Women, Youth & Vulnerable Groups",
     description: "Building capacity and creating opportunities for marginalized populations.",
+    image: youthEmpowerment,
     activities: [
       "Skills development and vocational training",
       "Leadership training programs",
@@ -48,6 +56,7 @@ const programs = [
     icon: TreePine,
     title: "Climate & Environmental Resilience",
     description: "Integrating psychosocial care into environmental and climate responses.",
+    image: climateResilience,
     activities: [
       "Community sensitization on climate impacts",
       "Local adaptation initiatives",
@@ -61,6 +70,7 @@ const programs = [
     icon: Megaphone,
     title: "Advocacy & Policy Engagement",
     description: "Amplifying community voices and influencing policy for systemic change.",
+    image: communityDialogue,
     activities: [
       "Policy advocacy at local and state levels",
       "Community voice amplification",
@@ -155,9 +165,7 @@ export default function Programs() {
                 id={program.id}
                 className="scroll-mt-24"
               >
-                <div className={`grid lg:grid-cols-2 gap-10 items-start ${
-                  index % 2 === 1 ? "" : ""
-                }`}>
+                <div className={`grid lg:grid-cols-2 gap-10 items-center`}>
                   <div className={index % 2 === 1 ? "lg:order-2" : ""}>
                     <div className="flex items-center gap-4 mb-6">
                       <div className="w-14 h-14 rounded-2xl bg-gradient-hero flex items-center justify-center">
@@ -182,14 +190,12 @@ export default function Programs() {
                     </div>
                   </div>
                   <div className={index % 2 === 1 ? "lg:order-1" : ""}>
-                    <div className="bg-muted rounded-2xl aspect-[4/3] flex items-center justify-center">
-                      <div className="text-center p-8">
-                        <program.icon className="h-16 w-16 text-primary/30 mx-auto mb-4" />
-                        <p className="text-muted-foreground text-sm italic">
-                          Program Image – {program.title}<br />
-                          (To Be Updated)
-                        </p>
-                      </div>
+                    <div className="rounded-2xl overflow-hidden shadow-lg">
+                      <img 
+                        src={program.image} 
+                        alt={program.title}
+                        className="w-full aspect-[4/3] object-cover"
+                      />
                     </div>
                   </div>
                 </div>
