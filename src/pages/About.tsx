@@ -2,6 +2,9 @@ import { Layout } from "@/components/Layout";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Eye, Target, Heart, Users, Award, Globe } from "lucide-react";
+import aboutHero from "@/assets/about-hero.png";
+import communityEngagement from "@/assets/community-engagement.png";
+import counsellingSession from "@/assets/counselling-session.png";
 
 const values = [
   {
@@ -30,8 +33,15 @@ export default function About() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-gradient-hero text-primary-foreground py-20">
-        <div className="container-ngo">
+      <section className="bg-gradient-hero text-primary-foreground py-20 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <img 
+            src={aboutHero} 
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="container-ngo relative">
           <div className="max-w-3xl">
             <h1 className="heading-display mb-6">About COMPSEI</h1>
             <p className="text-xl text-primary-foreground/90 leading-relaxed">
@@ -46,32 +56,54 @@ export default function About() {
       {/* Who We Are */}
       <section className="section-padding">
         <div className="container-ngo">
-          <div className="max-w-4xl mx-auto">
-            <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
-              Who We Are
-            </span>
-            <h2 className="heading-section mb-6">Our Story</h2>
-            <div className="prose prose-lg max-w-none text-muted-foreground space-y-4">
-              <p>
-                Community Psychosocial Support Empowerment Initiative (COMPSEI) is a non-governmental 
-                organization committed to addressing interlinked psychosocial, environmental, 
-                and community-level challenges. Our work empowers individuals and communities 
-                to thrive emotionally, socially, and economically through mental health support, 
-                awareness, education, and inclusion.
-              </p>
-              <p>
-                Founded with the belief that sustainable development must address the whole 
-                person—mind, body, and community—COMPSEI operates at the intersection of mental 
-                health, climate resilience, and community empowerment. We recognize that 
-                psychosocial wellbeing is fundamental to individual dignity and community 
-                development.
-              </p>
-              <p>
-                Our programs are designed and implemented with communities, not for them. 
-                We believe that lasting change emerges when local voices lead, when 
-                indigenous knowledge is valued, and when external support serves as 
-                a catalyst rather than a solution.
-              </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
+                Who We Are
+              </span>
+              <h2 className="heading-section mb-6">Our Story</h2>
+              <div className="prose prose-lg max-w-none text-muted-foreground space-y-4">
+                <p>
+                  Community Psychosocial Support Empowerment Initiative (COMPSEI) is a non-governmental 
+                  organization committed to addressing interlinked psychosocial, environmental, 
+                  and community-level challenges. Our work empowers individuals and communities 
+                  to thrive emotionally, socially, and economically through mental health support, 
+                  awareness, education, and inclusion.
+                </p>
+                <p>
+                  Founded with the belief that sustainable development must address the whole 
+                  person—mind, body, and community—COMPSEI operates at the intersection of mental 
+                  health, climate resilience, and community empowerment. We recognize that 
+                  psychosocial wellbeing is fundamental to individual dignity and community 
+                  development.
+                </p>
+                <p>
+                  Our programs are designed and implemented with communities, not for them. 
+                  We believe that lasting change emerges when local voices lead, when 
+                  indigenous knowledge is valued, and when external support serves as 
+                  a catalyst rather than a solution.
+                </p>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-4">
+                <div className="rounded-2xl overflow-hidden shadow-lg">
+                  <img 
+                    src={communityEngagement} 
+                    alt="COMPSEI community engagement"
+                    className="w-full h-[200px] object-cover"
+                  />
+                </div>
+              </div>
+              <div className="space-y-4 pt-8">
+                <div className="rounded-2xl overflow-hidden shadow-lg">
+                  <img 
+                    src={counsellingSession} 
+                    alt="Psychosocial support session"
+                    className="w-full h-[200px] object-cover"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -81,27 +113,33 @@ export default function About() {
       <section className="section-padding bg-muted">
         <div className="container-ngo">
           <div className="grid md:grid-cols-2 gap-10">
-            <div className="card-ngo p-8">
-              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
-                <Eye className="h-7 w-7 text-primary" />
+            <div className="card-ngo p-8 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+              <div className="relative">
+                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                  <Eye className="h-7 w-7 text-primary" />
+                </div>
+                <h3 className="heading-section mb-4">Our Vision</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  To create resilient, inclusive, and mentally healthy communities where every 
+                  individual—regardless of gender, age, or social status—has access to 
+                  psychosocial support and opportunities for empowerment.
+                </p>
               </div>
-              <h3 className="heading-section mb-4">Our Vision</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                To create resilient, inclusive, and mentally healthy communities where every 
-                individual—regardless of gender, age, or social status—has access to 
-                psychosocial support and opportunities for empowerment.
-              </p>
             </div>
-            <div className="card-ngo p-8">
-              <div className="w-14 h-14 rounded-full bg-secondary/20 flex items-center justify-center mb-6">
-                <Target className="h-7 w-7 text-secondary" />
+            <div className="card-ngo p-8 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+              <div className="relative">
+                <div className="w-14 h-14 rounded-full bg-secondary/20 flex items-center justify-center mb-6">
+                  <Target className="h-7 w-7 text-secondary" />
+                </div>
+                <h3 className="heading-section mb-4">Our Mission</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  To promote mental health, reduce stigma, and empower vulnerable populations 
+                  through community-driven programs, capacity building, and inclusive 
+                  development strategies.
+                </p>
               </div>
-              <h3 className="heading-section mb-4">Our Mission</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                To promote mental health, reduce stigma, and empower vulnerable populations 
-                through community-driven programs, capacity building, and inclusive 
-                development strategies.
-              </p>
             </div>
           </div>
         </div>
@@ -121,8 +159,8 @@ export default function About() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
-              <div key={index} className="text-center p-6">
-                <div className="w-14 h-14 rounded-full bg-gradient-hero flex items-center justify-center mx-auto mb-4">
+              <div key={index} className="card-ngo p-6 text-center group hover:border-primary/30 transition-colors">
+                <div className="w-14 h-14 rounded-full bg-gradient-hero flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                   <value.icon className="h-7 w-7 text-primary-foreground" />
                 </div>
                 <h3 className="heading-card mb-2">{value.title}</h3>

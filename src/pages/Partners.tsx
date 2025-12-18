@@ -2,6 +2,8 @@ import { Layout } from "@/components/Layout";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Building2, Users, Globe, Handshake } from "lucide-react";
+import partnership from "@/assets/partnership.png";
+import communityDialogue from "@/assets/community-dialogue.png";
 
 const partnerTypes = [
   {
@@ -39,8 +41,15 @@ export default function Partners() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-gradient-hero text-primary-foreground py-20">
-        <div className="container-ngo">
+      <section className="bg-gradient-hero text-primary-foreground py-20 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <img 
+            src={partnership} 
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="container-ngo relative">
           <div className="max-w-3xl">
             <h1 className="heading-display mb-6">Our Partners</h1>
             <p className="text-xl text-primary-foreground/90 leading-relaxed">
@@ -54,23 +63,37 @@ export default function Partners() {
       {/* Partnership Approach */}
       <section className="section-padding">
         <div className="container-ngo">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
-              Collaboration
-            </span>
-            <h2 className="heading-section mb-6">Partnership for Impact</h2>
-            <p className="text-lead">
-              COMPSEI believes that sustainable change requires collaboration. We actively 
-              seek partnerships that align with our mission and values, bringing together 
-              diverse expertise, resources, and networks to serve communities better.
-            </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            <div>
+              <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
+                Collaboration
+              </span>
+              <h2 className="heading-section mb-6">Partnership for Impact</h2>
+              <p className="text-lead mb-4">
+                COMPSEI believes that sustainable change requires collaboration. We actively 
+                seek partnerships that align with our mission and values, bringing together 
+                diverse expertise, resources, and networks to serve communities better.
+              </p>
+              <p className="text-muted-foreground">
+                Our partnerships are built on mutual respect, shared goals, and a commitment 
+                to community wellbeing. Whether through joint programs, resource sharing, or 
+                advocacy coalitions, we work together to multiply our impact.
+              </p>
+            </div>
+            <div className="rounded-2xl overflow-hidden shadow-lg">
+              <img 
+                src={communityDialogue} 
+                alt="Community collaboration"
+                className="w-full h-[350px] object-cover"
+              />
+            </div>
           </div>
 
           {/* Partner Types */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {partnerTypes.map((type, index) => (
-              <div key={index} className="card-ngo p-6 text-center">
-                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+              <div key={index} className="card-ngo p-6 text-center group hover:border-primary/30 transition-colors">
+                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                   <type.icon className="h-7 w-7 text-primary" />
                 </div>
                 <h3 className="font-semibold text-lg mb-2">{type.title}</h3>
@@ -89,19 +112,24 @@ export default function Partners() {
               Our Network
             </span>
             <h2 className="heading-section mb-4">Organizations We Work With</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Partner logos will be updated as we continue to grow our network of collaborators.
+            </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {partnerLogos.map((partner, index) => (
               <div 
                 key={index} 
-                className="bg-card rounded-xl border border-border p-8 flex items-center justify-center min-h-[120px]"
+                className="bg-card rounded-xl border border-border p-8 flex items-center justify-center min-h-[140px] hover:border-primary/30 hover:shadow-card transition-all"
               >
                 <div className="text-center">
-                  <Building2 className="h-10 w-10 text-muted-foreground/30 mx-auto mb-2" />
+                  <div className="w-16 h-16 rounded-full bg-muted flex items-center justify-center mx-auto mb-3">
+                    <Building2 className="h-8 w-8 text-muted-foreground/40" />
+                  </div>
                   <p className="text-muted-foreground text-sm italic">
                     Partner Logo<br />
-                    (To Be Updated)
+                    <span className="text-xs">(To Be Updated)</span>
                   </p>
                 </div>
               </div>
@@ -114,9 +142,17 @@ export default function Partners() {
       <section className="section-padding">
         <div className="container-ngo">
           <div className="max-w-4xl mx-auto">
-            <div className="card-ngo p-8 md:p-12">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div>
+            <div className="card-ngo overflow-hidden">
+              <div className="grid md:grid-cols-2">
+                <div className="relative h-[250px] md:h-auto">
+                  <img 
+                    src={partnership} 
+                    alt="Partnership"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-background/60 to-transparent"></div>
+                </div>
+                <div className="p-8">
                   <span className="inline-block px-4 py-1.5 bg-secondary/20 text-secondary-foreground text-sm font-medium rounded-full mb-4">
                     Partner With Us
                   </span>
@@ -147,15 +183,6 @@ export default function Partners() {
                   <Button variant="gold" size="lg" asChild>
                     <Link to="/contact">Contact Us to Partner</Link>
                   </Button>
-                </div>
-                <div className="bg-muted rounded-xl p-8 flex items-center justify-center min-h-[250px]">
-                  <div className="text-center">
-                    <Handshake className="h-16 w-16 text-primary/30 mx-auto mb-4" />
-                    <p className="text-muted-foreground text-sm italic">
-                      Partnership Visual<br />
-                      (To Be Updated)
-                    </p>
-                  </div>
                 </div>
               </div>
             </div>

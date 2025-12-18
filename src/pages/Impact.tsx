@@ -4,6 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Users, MapPin, Calendar, ArrowRight } from "lucide-react";
 import communityEngagement from "@/assets/community-engagement.png";
 import treePlanting from "@/assets/tree-planting.jpg";
+import counsellingSession from "@/assets/counselling-session.png";
+import youthEmpowerment from "@/assets/youth-empowerment.png";
+import volunteerGroup from "@/assets/volunteer-group.png";
+import communityDialogue from "@/assets/community-dialogue.png";
 
 const impactStats = [
   { value: "15+", label: "Communities Reached" },
@@ -19,7 +23,6 @@ const projects = [
     date: "Ongoing",
     description: "Training community members and volunteers in basic psychosocial support, peer counselling, and mental health first aid.",
     image: communityEngagement,
-    hasImage: true
   },
   {
     title: "Environmental Conservation & Tree Planting",
@@ -27,24 +30,30 @@ const projects = [
     date: "2023 - Present",
     description: "Community-led tree planting initiatives that combine environmental action with community engagement and psychosocial awareness.",
     image: treePlanting,
-    hasImage: true
   },
   {
     title: "Volunteer Engagement Sessions",
     location: "Various Locations",
     date: "Ongoing",
     description: "Regular sessions to orient, train, and engage volunteers in COMPSEI's community-based programs.",
-    image: null,
-    hasImage: false
+    image: volunteerGroup,
   },
   {
     title: "Community Dialogue Forums",
     location: "Rural Communities",
     date: "Periodic",
     description: "Facilitated community dialogues addressing mental health stigma, climate impacts, and community resilience building.",
-    image: null,
-    hasImage: false
+    image: communityDialogue,
   }
+];
+
+const gallery = [
+  { image: communityEngagement, title: "Community Training" },
+  { image: treePlanting, title: "Tree Planting Activity" },
+  { image: counsellingSession, title: "Support Session" },
+  { image: youthEmpowerment, title: "Youth Workshop" },
+  { image: volunteerGroup, title: "Volunteer Team" },
+  { image: communityDialogue, title: "Community Dialogue" },
 ];
 
 export default function Impact() {
@@ -110,25 +119,14 @@ export default function Impact() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
-              <div key={index} className="card-ngo overflow-hidden">
-                <div className="aspect-video bg-muted relative">
-                  {project.hasImage && project.image ? (
-                    <img 
-                      src={project.image} 
-                      alt={project.title}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center">
-                      <div className="text-center p-4">
-                        <Users className="h-12 w-12 text-primary/30 mx-auto mb-2" />
-                        <p className="text-muted-foreground text-sm italic">
-                          Field Project Image<br />
-                          (To Be Updated)
-                        </p>
-                      </div>
-                    </div>
-                  )}
+              <div key={index} className="card-ngo overflow-hidden group">
+                <div className="aspect-video relative overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent"></div>
                 </div>
                 <div className="p-6">
                   <h3 className="heading-card mb-3">{project.title}</h3>
@@ -143,6 +141,35 @@ export default function Impact() {
                     </div>
                   </div>
                   <p className="text-muted-foreground text-sm">{project.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Photo Gallery */}
+      <section className="section-padding">
+        <div className="container-ngo">
+          <div className="text-center mb-12">
+            <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
+              Photo Gallery
+            </span>
+            <h2 className="heading-section mb-4">Our Work in Pictures</h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {gallery.map((item, index) => (
+              <div 
+                key={index} 
+                className="relative rounded-xl overflow-hidden aspect-square group cursor-pointer"
+              >
+                <img 
+                  src={item.image} 
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <p className="text-primary-foreground font-medium">{item.title}</p>
                 </div>
               </div>
             ))}
