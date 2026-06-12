@@ -5,13 +5,55 @@ export function OrganizationJsonLd() {
     name: "COMPSEI",
     alternateName: "Community Psychosocial Support Empowerment Initiative",
     url: "https://compsei.com.ng",
-    logo: "https://compsei.com.ng/compsei-logo.png",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://compsei.com.ng/compsei-logo.png",
+      width: 512,
+      height: 512,
+    },
     description:
       "Nigerian NGO addressing psychosocial, environmental, and community-level challenges through inclusive, community-driven solutions.",
     foundingLocation: { "@type": "Country", name: "Nigeria" },
+    areaServed: { "@type": "Country", name: "Nigeria" },
     email: "compsagg@gmail.com",
     telephone: "+2349157020747",
-    sameAs: [],
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "NG",
+    },
+    knowsAbout: [
+      "Psychosocial Support",
+      "Community Empowerment",
+      "Mental Health",
+      "Climate Resilience",
+      "Community Development",
+    ],
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+export function WebSiteJsonLd() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "COMPSEI",
+    url: "https://compsei.com.ng",
+    description:
+      "COMPSEI — Community Psychosocial Support Empowerment Initiative. Nigerian NGO empowering communities through psychosocial support, climate resilience, and inclusive development.",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: "https://compsei.com.ng/blog?search={search_term_string}",
+      },
+      "query-input": "required name=search_term_string",
+    },
   };
 
   return (

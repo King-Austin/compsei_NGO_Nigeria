@@ -3,7 +3,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Providers } from "@/components/Providers";
-import { OrganizationJsonLd } from "@/components/JsonLd";
+import { OrganizationJsonLd, WebSiteJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://compsei.com.ng"),
@@ -15,10 +15,15 @@ export const metadata: Metadata = {
     "COMPSEI is a Nigerian NGO addressing psychosocial, environmental, and community-level challenges through inclusive, community-driven solutions.",
   keywords: [
     "psychosocial support Nigeria",
-    "community empowerment NGO",
-    "mental health Nigeria",
+    "community empowerment NGO Nigeria",
+    "mental health support Nigeria",
     "climate resilience Nigeria",
-    "COMPSEI",
+    "COMPSEI NGO",
+    "community development organization Nigeria",
+    "vulnerable communities support Nigeria",
+    "psychosocial wellbeing Nigeria",
+    "NGO Nigeria mental health",
+    "community driven solutions Nigeria",
   ],
   authors: [{ name: "COMPSEI" }],
   creator: "COMPSEI",
@@ -50,6 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning>
       <body>
         <OrganizationJsonLd />
+        <WebSiteJsonLd />
         <Providers>
           <div className="min-h-screen flex flex-col">
             <Header />

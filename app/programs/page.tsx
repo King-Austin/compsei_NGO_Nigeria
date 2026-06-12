@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Our Work & Programs | COMPSEI",
     url: "https://compsei.com.ng/programs",
+    images: [{ url: "/compsei-logo.png", width: 512, height: 512, alt: "COMPSEI Programs" }],
   },
   alternates: { canonical: "https://compsei.com.ng/programs" },
 };

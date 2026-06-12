@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Challenges We Address | COMPSEI",
     url: "https://compsei.com.ng/challenges",
+    images: [{ url: "/compsei-logo.png", width: 512, height: 512, alt: "Challenges COMPSEI Addresses" }],
   },
   alternates: { canonical: "https://compsei.com.ng/challenges" },
 };
