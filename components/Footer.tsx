@@ -120,7 +120,7 @@ export function Footer() {
                   <MapPin className="h-5 w-5 mt-0.5 text-secondary" />
                   <span className="text-sm text-primary-foreground/80">
                     Nigeria<br />
-                    <span className="text-xs opacity-80">(Office address to be updated)</span>
+                    <span className="text-xs opacity-80">No 1, Secretariat Road, Aroma, Anambra State</span>
                   </span>
                 </li>
                 <li className="flex items-center gap-3">
